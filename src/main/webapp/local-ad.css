@@ -1,0 +1,16 @@
+.wrapper {
+    width: 650px;
+    height: 300px;
+    background-color: gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.advertise_part {
+    width: 600px;
+    height: 270px;
+    background-image: url("./local_ad_image.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}

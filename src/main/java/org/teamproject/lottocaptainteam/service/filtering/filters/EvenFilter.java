@@ -2,6 +2,7 @@ package org.teamproject.lottocaptainteam.service.filtering.filters;
 
 import java.util.List;
 
+
 public class EvenFilter implements LottoFilter {
 
     @Override

@@ -2,8 +2,9 @@ package org.teamproject.lottocaptainteam.service.filtering.validator;
 
 import java.util.HashSet;
 import java.util.List;
-import org.example.lottocaptaintest.service.filtering.constant.ErrorMessage;
-import org.example.lottocaptaintest.service.filtering.constant.LottoRegulation;
+import org.teamproject.lottocaptainteam.service.filtering.constant.ErrorMessage;
+import org.teamproject.lottocaptainteam.service.filtering.constant.LottoRegulation;
+
 
 public class LottoNumberValidatorImpl implements LottoNumberValidator {
 
