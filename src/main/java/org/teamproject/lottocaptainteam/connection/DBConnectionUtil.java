@@ -11,8 +11,7 @@ import java.sql.SQLException;
 public class DBConnectionUtil {
     public static Connection getConnection() {
         try {
-            Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
-            return connection;
+            return DriverManager.getConnection(URL, USERNAME, PASSWORD);
         } catch (SQLException e) {
             throw new IllegalStateException(e);
         }
