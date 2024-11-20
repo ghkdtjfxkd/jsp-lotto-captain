@@ -1,7 +1,7 @@
 package org.teamproject.lottocaptainteam.service.filtering;
 
-import static org.teamproject.lottocaptainteam.service.filtering.constant.LottoRegulation.END_INCLUSIVE_NUMBER;
-import static org.teamproject.lottocaptainteam.service.filtering.constant.LottoRegulation.START_INCLUSIVE_NUMBER;
+import static org.teamproject.lottocaptainteam.service.constant.LottoRegulation.END_INCLUSIVE_NUMBER;
+import static org.teamproject.lottocaptainteam.service.constant.LottoRegulation.START_INCLUSIVE_NUMBER;
 
 import java.util.List;
 import java.util.stream.IntStream;

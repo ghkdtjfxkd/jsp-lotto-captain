@@ -1,11 +1,12 @@
 package org.teamproject.lottocaptainteam.connection;
 
+import jakarta.activation.DataSource;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import javax.sql.DataSource;
+
 import org.teamproject.lottocaptainteam.domain.Member;
 
 public class JdbcMemberRepository {

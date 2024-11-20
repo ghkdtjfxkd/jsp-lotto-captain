@@ -12,7 +12,7 @@
 </head>
 <body>
 <div class="headline">
-    <div class="headline_logo"></div>
+    <div class="headline_logo"><a href=""><img src="static/logo.png" alt=""></a></div>
 
     <div class="headline_category">
         <div class="headline_category_forum"><a href="">로또번호 추천</a>  </div>

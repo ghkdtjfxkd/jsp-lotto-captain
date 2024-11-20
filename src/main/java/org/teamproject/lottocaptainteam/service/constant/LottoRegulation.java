@@ -1,4 +1,4 @@
-package org.teamproject.lottocaptainteam.service.filtering.constant;
+package org.teamproject.lottocaptainteam.service.constant;
 
 public enum LottoRegulation {
 

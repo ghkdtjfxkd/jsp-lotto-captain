@@ -27,6 +27,8 @@ dependencies {
     compileOnly 'org.projectlombok:lombok:1.18.28' // 최신 버전으로 교체
     annotationProcessor 'org.projectlombok:lombok:1.18.28' // 어노테이션 처리기 추가
 
+    implementation 'jakarta.platform:jakarta.jakartaee-api:10.0.0'
+
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
 }

@@ -13,11 +13,12 @@
 <body>
     <div class="login_wrapper">
         <div class="login_core">
-            <div class="login_core_input">
-                    <input type="text" class="login_core_input_id">
-                    <input type="password" class="login_core_input_pw">
 
+            <div class="login_core_input">
+                <input type="text" class="login_core_input_id">
+                <input type="password" class="login_core_input_pw">
             </div>
+
             <div class="login_core_button">
                 <submit>로그인</submit>
             </div>

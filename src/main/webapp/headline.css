@@ -1,6 +1,6 @@
 .headline {
     width: 1000px;
-    height: 80px;
+    height: 100px;
     background-color: bisque;
     display: flex;
     flex-direction: row;
@@ -10,7 +10,7 @@
 
 .headline_logo {
     width: 150px;
-    height: 80px;
+    height: 100px;
     background-color: blueviolet;
 }
 

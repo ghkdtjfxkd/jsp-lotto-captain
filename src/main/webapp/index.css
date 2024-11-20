@@ -28,7 +28,7 @@
 .main_wrapper {
     background-color: azure;
     width: 1000px;
-    height: 1000px;
+    height: 900px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -37,15 +37,15 @@
 
 .main_wrapper_header {
     width: inherit;
-    height: 80px;
+    height: 100px;
 }
 
 .main_wrapper_contents {
     width: inherit;
-    height: 920px;
+    height: 1000px;
     display: flex;
     flex-direction: column;
-
+    justify-content: space-between;
 }
 
 .main_upperPart {
@@ -54,7 +54,7 @@
     height: 300px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 
