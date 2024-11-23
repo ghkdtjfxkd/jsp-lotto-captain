@@ -1,16 +1,25 @@
 package org.teamproject.lottocaptainteam.connection;
 
+import static org.teamproject.lottocaptainteam.connection.ConnectionConst.JDBC_DRIVER;
 import static org.teamproject.lottocaptainteam.connection.ConnectionConst.PASSWORD;
 import static org.teamproject.lottocaptainteam.connection.ConnectionConst.URL;
 import static org.teamproject.lottocaptainteam.connection.ConnectionConst.USERNAME;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 
+
 public class DBConnectionUtil {
+
+    static {
+        try {
+            Class.forName(JDBC_DRIVER);
+        } catch (ClassNotFoundException e) {
+            throw new IllegalStateException("JDBC 드라이버 로드 실패", e);
+        }
+    }
+
 
     public static Connection getConnection() {
         try {
@@ -20,58 +29,14 @@ public class DBConnectionUtil {
         }
     }
 
-    public static void close(PreparedStatement pstmt, Connection conn) {
-        if (pstmt != null) {
-            try {
-                if (!pstmt.isClosed())
-                    pstmt.close();
-            } catch (Exception e) {
-                e.printStackTrace();
-            } finally {
-                pstmt = null;
-            }
-        }
-        if (conn != null) {
-            try {
-                if (!conn.isClosed())
-                    conn.close();
-            } catch (Exception e) {
-                e.printStackTrace();
-            } finally {
-                conn = null;
-            }
-        }
-    }
-
-    public static void close(ResultSet rs, PreparedStatement pstmt, Connection conn) {
-        if (rs != null) {
-            try {
-                if (!rs.isClosed())
-                    rs.close();
-            } catch (Exception e) {
-                e.printStackTrace();
-            } finally {
-                rs = null;
-            }
-        }
-        if (pstmt != null) {
-            try {
-                if (!pstmt.isClosed())
-                    pstmt.close();
-            } catch (Exception e) {
-                e.printStackTrace();
-            } finally {
-                pstmt = null;
-            }
-        }
-        if (conn != null) {
-            try {
-                if (!conn.isClosed())
-                    conn.close();
-            } catch (Exception e) {
-                e.printStackTrace();
-            } finally {
-                conn = null;
+    public static void close(AutoCloseable... resources) {
+        for (AutoCloseable resource : resources) {
+            if (resource != null) {
+                try {
+                    resource.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
             }
         }
     }
