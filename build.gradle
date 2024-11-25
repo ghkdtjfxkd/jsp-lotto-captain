@@ -28,6 +28,16 @@ dependencies {
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
 }
 
+dependencies {
+    implementation 'javax.servlet:javax.servlet-api:4.0.1'
+    implementation 'javax.servlet.jsp:javax.servlet.jsp-api:2.3.3'
+    //implementation 'mysql:mysql-connector-java:8.0.34' // MySQL Connector
+}
+
 test {
     useJUnitPlatform()
+}
+
+war {
+    webAppDirName = 'src/main/webapp'
 }
