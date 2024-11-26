@@ -19,7 +19,7 @@ public class MemberListController implements MemberController {
     public ModelView process(Map<String, String> paramMap) {
         List<Member> members = memberRepository.findAll();
 
-        ModelView mv = new ModelView("member/members");
+        ModelView mv = new ModelView("/member/admin/members");
         mv.getModel().put("members", members);
 
         return mv;

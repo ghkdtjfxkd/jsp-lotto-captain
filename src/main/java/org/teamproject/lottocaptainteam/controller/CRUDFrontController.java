@@ -10,9 +10,12 @@ import java.util.HashMap;
 import java.util.Map;
 import org.teamproject.lottocaptainteam.config.DBConfig;
 import org.teamproject.lottocaptainteam.controller.member.MemberController;
+import org.teamproject.lottocaptainteam.controller.member.list.MemberListController;
 import org.teamproject.lottocaptainteam.controller.member.login.MemberLoginController;
 import org.teamproject.lottocaptainteam.controller.member.signup.MemberFormController;
 import org.teamproject.lottocaptainteam.controller.member.signup.MemberSignupController;
+import org.teamproject.lottocaptainteam.controller.member.update.MemberUpdateController;
+import org.teamproject.lottocaptainteam.controller.member.update.MemberUpdateFormController;
 import org.teamproject.lottocaptainteam.repository.MemberRepositoryImpl;
 
 @WebServlet(name = "cRUDFrontController", urlPatterns = "/member/*")
@@ -27,6 +30,9 @@ public class CRUDFrontController extends HttpServlet {
         controllerMap.put("/member/signup/signup-form", new MemberFormController());
         controllerMap.put("/member/signup/save", new MemberSignupController(MemberRepositoryImpl.getInstance()));
         controllerMap.put("/member/login/login", new MemberLoginController(MemberRepositoryImpl.getInstance()));
+        controllerMap.put("/member/mypage/mypage-form", new MemberUpdateFormController());
+        controllerMap.put("/member/mypage/after-update", new MemberUpdateController(MemberRepositoryImpl.getInstance()));
+        controllerMap.put("/member/admin/members", new MemberListController(MemberRepositoryImpl.getInstance()));
     }
 
     private void initDB() {

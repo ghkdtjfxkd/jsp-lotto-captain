@@ -1,5 +1,6 @@
 package org.teamproject.lottocaptainteam.repository;
 
+import java.awt.MenuBar;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -107,6 +108,7 @@ public class MemberRepositoryImpl implements MemberRepository {
             throw new IllegalStateException("Failed to fetch all members", e);
         }
         return members;
+
     }
 
     private Member mapToMember(ResultSet rs) throws SQLException {

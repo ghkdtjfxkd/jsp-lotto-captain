@@ -5,13 +5,15 @@
   Time: 오전 9:39
   To change this template use File | Settings | File Templates.
 --%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="https://jakarta.ee/jstl/core" %>
 <html>
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-<a href="/index.html">메인</a>
+<a href="/index.jsp">메인</a>
 <table>
     <thead>
     <th>id</th>
@@ -21,9 +23,9 @@
     <tbody>
     <c:forEach var="item" items="${members}">
         <tr>
-            <td>${item.id}</td>
-            <td>${item.name}</td>
-            <td>${item.email}</td>
+            <td>${item.getId}</td>
+            <td>${item.getName}</td>
+            <td>${item.getEmail}</td>
         </tr>
     </c:forEach>
     </tbody>

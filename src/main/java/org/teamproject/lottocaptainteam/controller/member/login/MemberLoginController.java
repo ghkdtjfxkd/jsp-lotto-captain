@@ -26,10 +26,10 @@ public class MemberLoginController implements MemberController {
         try {
             login(id, password);
             ModelView mv = new ModelView("member/login/after-login");
-            mv.getModel().put("loggedMember", id);
+            mv.getModel().put("loggedMember", loggedMember);
             return mv;
-        } catch (BadRequestException e) {
-            ModelView mv = new ModelView("member/login/fail-login");
+        } catch (Exception e) {
+            ModelView mv = new ModelView("member/login/login-fail");
             mv.getModel().put("errorMessage", e.getMessage());
             return mv;
         }
