@@ -11,7 +11,8 @@ public class MemberDAO {
     private final String username = "root";
     private final String password = "password";
 
-    public Connection connect() throws SQLException {
+    public Connection connect() throws SQLException, ClassNotFoundException {
+        Class.forName("com.mysql.cj.jdbc.Driver");
         return DriverManager.getConnection(url, username, password);
     }
 
@@ -27,13 +28,16 @@ public class MemberDAO {
         } catch (SQLException e) {
             e.printStackTrace();
             return false;
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
     }
 
     // Authenticate member
     public Member login(String id, String password) {
         String sql = "SELECT * FROM members WHERE id = ? AND password = ?";
-        try (Connection conn = connect(); PreparedStatement ps = conn.prepareStatement(sql)) {
+        try (Connection conn = connect();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setString(1, id);
             ps.setString(2, password);
             ResultSet rs = ps.executeQuery();
@@ -43,6 +47,8 @@ public class MemberDAO {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
         return null;
     }
@@ -57,6 +63,8 @@ public class MemberDAO {
             ps.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -72,6 +80,8 @@ public class MemberDAO {
             }
         } catch (SQLException e) {
             e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
         return members;
     }
