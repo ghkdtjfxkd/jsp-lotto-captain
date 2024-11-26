@@ -1,5 +1,5 @@
 .login_wrapper {
-    background-color: antiquewhite;
+    background-color: gray;
     width: 300px;
     height: 150px;
     display: flex;
@@ -38,6 +38,9 @@
     background-color: aquamarine;
     width: 70px;
     height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .login_sub {

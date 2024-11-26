@@ -1,7 +1,5 @@
 package org.teamproject.lottocaptainteam.repository.update;
 
-import static org.teamproject.lottocaptainteam.connection.DBConnectionUtil.close;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -20,7 +18,7 @@ public class MemberUpdateStrategyImpl implements MemberUpdateStrategy {
 
     @Override
     public Optional<Member> execute(String id, Member updatedMember) {
-        String sql = "update member set member_name = ?, member_password = ?, member_email = ? where id = ?";
+        String sql = "update member set name = ?, password = ?, email = ? where id = ?";
         Connection conn = null;
         PreparedStatement pstmt = null;
 
@@ -40,14 +38,11 @@ public class MemberUpdateStrategyImpl implements MemberUpdateStrategy {
             }
         } catch (Exception e) {
             throw new IllegalStateException(e);
-        } finally {
-            close(conn, pstmt);
         }
-
     }
 
     private boolean isMemberExists(String id) {
-        String sql = "SELECT 1 FROM member WHERE member_id = ?";
+        String sql = "SELECT 1 FROM member WHERE id = ?";
         try (Connection conn = connection.getConnection();
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, id);

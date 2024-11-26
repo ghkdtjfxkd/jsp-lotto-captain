@@ -11,25 +11,19 @@ import java.sql.SQLException;
 
 
 public class DBConnectionUtil {
-
-    static {
+    
+    public Connection getConnection() {
         try {
             Class.forName(JDBC_DRIVER);
-        } catch (ClassNotFoundException e) {
-            throw new IllegalStateException("JDBC 드라이버 로드 실패", e);
-        }
-    }
-
-
-    public static Connection getConnection() {
-        try {
             return DriverManager.getConnection(URL, USERNAME, PASSWORD);
         } catch (SQLException e) {
             throw new IllegalStateException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
     }
 
-    public static void close(AutoCloseable... resources) {
+    public void close(AutoCloseable... resources) {
         for (AutoCloseable resource : resources) {
             if (resource != null) {
                 try {

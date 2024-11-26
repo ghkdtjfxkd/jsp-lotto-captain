@@ -1,7 +1,5 @@
 package org.teamproject.lottocaptainteam.repository.delete;
 
-import static org.teamproject.lottocaptainteam.connection.DBConnectionUtil.close;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -17,7 +15,7 @@ public class MemberDeleteStrategyImpl implements MemberDeleteStrategy {
 
     @Override
     public void execute(String memberId) throws SQLException {
-        String sql = "delete from member where member_id=?";
+        String sql = "delete from member where id=?";
         Connection con = null;
         PreparedStatement pstmt = null;
         try {
@@ -27,9 +25,6 @@ public class MemberDeleteStrategyImpl implements MemberDeleteStrategy {
             pstmt.executeUpdate();
         } catch (SQLException e) {
             throw e;
-        } finally {
-            close(con, pstmt, null);
         }
-
     }
 }

@@ -1,7 +1,5 @@
 package org.teamproject.lottocaptainteam.repository.search;
 
-import static org.teamproject.lottocaptainteam.connection.DBConnectionUtil.close;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -40,7 +38,7 @@ public class MemberSearchStrategyImpl implements MemberSearchStrategy {
         } catch (Exception e) {
             throw new IllegalStateException(e);
         } finally {
-            close(conn, pstmt, rs);
+            connectionUtil.close(conn, pstmt, rs);
         }
     }
 

@@ -1,7 +1,5 @@
 package org.teamproject.lottocaptainteam.repository.signup;
 
-import static org.teamproject.lottocaptainteam.connection.DBConnectionUtil.close;
-
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -18,7 +16,7 @@ public class MemberSignupStrategyImpl implements MemberSignupStrategy {
 
     @Override
     public Member execute(Member member) {
-        String sql = "insert into member(member_id, member_name, member_password, member_email) values(?, ?, ?, ?)";
+        String sql = "insert into member(id, name, password, email) values(?, ?, ?, ?)";
         Connection con = null;
         PreparedStatement pstmt = null;
 
@@ -35,8 +33,6 @@ public class MemberSignupStrategyImpl implements MemberSignupStrategy {
             return member;
         } catch (SQLException e) {
             throw new IllegalStateException(e);
-        } finally {
-            close(con, pstmt, null);
         }
     }
 }
