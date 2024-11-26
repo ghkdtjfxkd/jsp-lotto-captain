@@ -28,7 +28,8 @@
 
         <div class="main_wrapper_contents">
             <div class="main_upperPart">
-                <jsp:include page="WEB-INF/views/member/login/login.jsp"/>
+<%--                <jsp:include page="WEB-INF/views/member/login/login.jsp"/>--%>
+                <%@ include file="WEB-INF/views/member/login/login.jsp"%>
                 <%@ include file="local-ad.jsp"%>
             </div>
             <div class="main_lowerPart"></div>

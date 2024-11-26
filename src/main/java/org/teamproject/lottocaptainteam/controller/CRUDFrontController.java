@@ -26,7 +26,7 @@ public class CRUDFrontController extends HttpServlet {
         initDB();
         controllerMap.put("/member/signup/signup-form", new MemberFormController());
         controllerMap.put("/member/signup/save", new MemberSignupController(MemberRepositoryImpl.getInstance()));
-        controllerMap.put("/member/login", new MemberLoginController(MemberRepositoryImpl.getInstance()));
+        controllerMap.put("/member/login/login", new MemberLoginController(MemberRepositoryImpl.getInstance()));
     }
 
     private void initDB() {

@@ -25,11 +25,13 @@ public class MemberLoginController implements MemberController {
         String password = paramMap.get("password");
         try {
             login(id, password);
-            paramMap.put("loggedMember", id);
-            return new ModelView("after-login");
+            ModelView mv = new ModelView("member/login/after-login");
+            mv.getModel().put("loggedMember", id);
+            return mv;
         } catch (BadRequestException e) {
-            paramMap.put("errorMessage", e.getMessage());
-            return new ModelView("login");
+            ModelView mv = new ModelView("member/login/fail-login");
+            mv.getModel().put("errorMessage", e.getMessage());
+            return mv;
         }
     }
 

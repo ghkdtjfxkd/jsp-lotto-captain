@@ -12,7 +12,7 @@
 </head>
 <body>
 <div class="login_wrapper">
-    <form action="/member/login" method="post" class="login_core">
+    <form action="/member/login/login" method="post" class="login_core">
         <div class="login_core_input">
             <input type="text" placeholder="아이디" name="id" class="login_core_input_id" required>
             <input type="password" placeholder="비밀번호" name="password" class="login_core_input_pw" required>
