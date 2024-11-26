@@ -10,6 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 import org.teamproject.lottocaptainteam.config.DBConfig;
 import org.teamproject.lottocaptainteam.controller.member.MemberController;
+import org.teamproject.lottocaptainteam.controller.member.delete.MemberDeleteController;
 import org.teamproject.lottocaptainteam.controller.member.list.MemberListController;
 import org.teamproject.lottocaptainteam.controller.member.login.MemberLoginController;
 import org.teamproject.lottocaptainteam.controller.member.signup.MemberFormController;
@@ -33,6 +34,7 @@ public class CRUDFrontController extends HttpServlet {
         controllerMap.put("/member/mypage/mypage-form", new MemberUpdateFormController());
         controllerMap.put("/member/mypage/after-update", new MemberUpdateController(MemberRepositoryImpl.getInstance()));
         controllerMap.put("/member/admin/members", new MemberListController(MemberRepositoryImpl.getInstance()));
+        controllerMap.put("/member/admin/delete", new MemberDeleteController(MemberRepositoryImpl.getInstance()));
     }
 
     private void initDB() {
@@ -56,6 +58,7 @@ public class CRUDFrontController extends HttpServlet {
 
         Map<String, String> paramMap = createParamMap(request);
         ModelView mv = controller.process(paramMap);
+
         String viewName = mv.getViewName();
         MyView view = viewResolver(viewName);
         view.render(mv.getModel(), request, response);

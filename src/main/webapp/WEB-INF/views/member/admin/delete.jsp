@@ -2,19 +2,15 @@
   Created by IntelliJ IDEA.
   User: syt11
   Date: 2024. 11. 26.
-  Time: 오전 9:39
+  Time: 오후 2:37
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+    <title>회원 삭제 성공</title>
 <body>
-<a href="/index.jsp">메인</a>
-<form method="post" action="/member/admin/delete">
+삭제 된 회원들
 <table>
     <thead>
     <th>선택</th>
@@ -33,7 +29,6 @@
     </c:forEach>
     </tbody>
 </table>
-    <button type="submit">선택된 멤버 삭제</button>
-</form>
+<a href="/index.jsp">메인</a>
 </body>
 </html>
