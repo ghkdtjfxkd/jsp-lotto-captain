@@ -24,21 +24,21 @@ public class MemberUpdateController implements MemberController {
         Member updatedMember = null;
 
         if (findMember.isPresent()) {
-            String inputName = paramMap.get("inputName");
-            String inputPassword = paramMap.get("inputPassword");
-            String email = paramMap.get("inputEmail");
+            String inputName = paramMap.get("name");
+            String inputPassword = paramMap.get("password");
+            String email = paramMap.get("email");
 
             updatedMember = findMember.get();
-            updatedMember.withName(inputName);
-            updatedMember.withPassword(inputPassword);
-            updatedMember.withEmail(email);
+            updatedMember = updatedMember.withName(inputName);
+            updatedMember = updatedMember.withPassword(inputPassword);
+            updatedMember = updatedMember.withEmail(email);
 
             memberRepository.updateMemberById(id, updatedMember);
         }
 
         ModelView mv = new ModelView("member/mypage/after-update");
         mv.getModel().put("member", updatedMember);
-        return new ModelView("updated_member");
+        return mv;
     }
 
     private Optional<Member> findById(String id) {
@@ -46,7 +46,7 @@ public class MemberUpdateController implements MemberController {
     }
 
     private void validateMatchedMemberExist(String id) {
-        if(findById(id).isEmpty()) {
+        if (findById(id).isEmpty()) {
             throw new BadRequestException("cannot find member with : " + id);
         }
     }

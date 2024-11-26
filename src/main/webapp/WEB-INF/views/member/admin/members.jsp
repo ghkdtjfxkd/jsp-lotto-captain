@@ -25,7 +25,7 @@
     <tbody>
     <c:forEach var="item" items="${members}">
         <tr>
-            <td><input type="checkbox" name="memberIds" value="${item.id}"></td>
+            <td><input type="checkbox" name="${item.id}" value="${item.id}"></td>
             <td>${item.id}</td>
             <td>${item.name}</td>
             <td>${item.email}</td>

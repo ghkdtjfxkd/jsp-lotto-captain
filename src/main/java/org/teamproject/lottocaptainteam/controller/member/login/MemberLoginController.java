@@ -23,6 +23,7 @@ public class MemberLoginController implements MemberController {
     public ModelView process(Map<String, String> paramMap) {
         String id = paramMap.get("id");
         String password = paramMap.get("password");
+
         try {
             login(id, password);
             ModelView mv = new ModelView("member/login/after-login");

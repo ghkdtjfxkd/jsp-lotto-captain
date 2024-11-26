@@ -11,7 +11,7 @@
     <title>Title</title>
 </head>
 <body>
-<form action="/member/mypage/mypage-form" method="POST">
+<form action="after-update" method="POST">
     ID: <input type="text" name="id" required><br>
     Name: <input type="text" name="name" required><br>
     Password: <input type="password" name="password" required><br>
