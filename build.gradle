@@ -29,6 +29,7 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok:1.18.28' // 어노테이션 처리기 추가
 
     implementation 'mysql:mysql-connector-java:8.0.33'
+    implementation 'org.json:json:20230227'
 
     implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:2.0.0'
     implementation 'org.glassfish.web:jakarta.servlet.jsp.jstl:2.0.0'
