@@ -1,0 +1,30 @@
+.headline {
+    width: 1000px;
+    height: 100px;
+    background-color: bisque;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.headline_logo {
+    background-color: blue;
+    width: 150px;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.headline_category {
+    width: 850px;
+    height: inherit;
+    background-color: coral;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}

@@ -1,12 +1,12 @@
 package org.teamproject.lottocaptainteam.service.filtering.filters;
 
 import java.util.List;
-
+import java.util.Map;
 
 public class EvenFilter implements LottoFilter {
 
     @Override
-    public List<Integer> apply(List<Integer> rawNumbers) {
+    public List<Integer> apply(List<Integer> rawNumbers, Map<String, String> paramMap) {
         return List.copyOf(collectedEvenNumbersWith(rawNumbers));
     }
 

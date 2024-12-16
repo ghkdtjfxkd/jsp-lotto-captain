@@ -5,6 +5,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import org.json.JSONObject;
+import org.teamproject.lottocaptainteam.parser.DrawParser;
 
 
 public class lottoApi {
@@ -56,6 +57,7 @@ public class lottoApi {
 
     public static void main(String[] args) {
         getLottoNumber(1147); // 1회차 정보 호출
+        getLottoNumber(DrawParser.result());
     }
 }
 

@@ -19,16 +19,21 @@
     <thead>
     <th>선택</th>
     <th>id</th>
+    <th>비밀번호</th>
     <th>username</th>
     <th>email</th>
+    <th>관리자</th>
+
     </thead>
     <tbody>
     <c:forEach var="item" items="${members}">
         <tr>
             <td><input type="checkbox" name="${item.id}" value="${item.id}"></td>
             <td>${item.id}</td>
+            <td>${item.password}</td>
             <td>${item.name}</td>
             <td>${item.email}</td>
+            <td>${item.admin}</td>
         </tr>
     </c:forEach>
     </tbody>

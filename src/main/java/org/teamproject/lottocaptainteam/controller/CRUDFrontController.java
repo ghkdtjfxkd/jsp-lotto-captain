@@ -25,7 +25,7 @@ public class CRUDFrontController extends HttpServlet {
     private Map<String, MemberController> controllerMap = new HashMap<>();
     private final DBConfig dbConfig;
 
-    public CRUDFrontController() {
+    public CRUDFrontController() throws IOException {
         this.dbConfig = new DBConfig();
         initDB();
         controllerMap.put("/member/signup/signup-form", new MemberFormController());
@@ -37,7 +37,7 @@ public class CRUDFrontController extends HttpServlet {
         controllerMap.put("/member/admin/delete", new MemberDeleteController(MemberRepositoryImpl.getInstance()));
     }
 
-    private void initDB() {
+    private void initDB() throws IOException {
         MemberRepositoryImpl.initialize(
                 dbConfig.memberSignupStrategy(),
                 dbConfig.memberSearchStrategy(),

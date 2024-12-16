@@ -1,22 +1,36 @@
+body {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .container {
     background-color: cornflowerblue;
-    width: 100%;
-    height: 1000px;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+}
+.main {
+    width: 1800px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .left_ad {
     width: 300px;
-    height: inherit;
     background-color: gray;
 }
 
 .left_ad_factor {
-    width: inherit;
-    height: 70px;
+    width: 300px;
+}
+
+.left_ad_factor img {
+    width: 300px;
 }
 
 .right_ad {
@@ -26,30 +40,34 @@
 }
 
 .main_wrapper {
-    background-color: azure;
+    background-color: green;
     width: 1000px;
-    height: 900px;
+    height: 1000px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     align-items: center;
 }
 
 .main_wrapper_header {
     width: inherit;
     height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .main_wrapper_contents {
     width: inherit;
-    height: 1000px;
+    height: 900px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .main_upperPart {
-    background-color: aquamarine;
+    background-color: olivedrab;
     width: inherit;
     height: 300px;
     display: flex;
@@ -59,11 +77,9 @@
 }
 
 .main_lowerPart {
-    width: inherit;
-    height: 300px;
+    height: 320px;
 }
 
 .main_lower_ad {
-    width: inherit;
-    height: 120px ;
+
 }

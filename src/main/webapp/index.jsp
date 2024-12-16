@@ -12,36 +12,44 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
-
 <div class="container">
+
+    <div class="main">
+        
     <div class="left_ad">
-        <a href="https://www.kosaf.go.kr/ko/main.do" class="left_ad_factor">
-            <img src="./static/img_1.png" alt="">
-        </a>
+        <%@ include file="ad/left-ad.jsp" %>
     </div>
 
     <div class="main_wrapper">
-        
         <div class="main_wrapper_header">
             <%@ include file="header.jsp" %>
         </div>
 
         <div class="main_wrapper_contents">
             <div class="main_upperPart">
-                <%@ include file="WEB-INF/views/member/login/login-status.jsp"%>
-                <%@ include file="local-ad.jsp"%>
+                <div>
+                    <%@ include file="WEB-INF/views/member/login/login-status.jsp" %>
+                </div>
+                <div>
+                    <%@ include file="local-ad.jsp" %>
+                </div>
             </div>
-            <div class="main_lowerPart"></div>
+
+            <div class="main_lowerPart">
+                <%@ include file="main-lowerpart/main-lower.jsp"%>
+            </div>
+
             <div class="main_lower_ad">
                 <a href="https://www.dongyang.ac.kr">
                     <img src="./static/safetyPlayground.png" alt="">
                 </a>
             </div>
         </div>
-
     </div>
 
     <div class="right_ad">
+        <%@ include file="ad/right-ad.jsp" %>
+    </div>
 
     </div>
 </div>

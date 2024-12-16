@@ -1,6 +1,7 @@
 package org.teamproject.lottocaptainteam.controller.member.signup;
 
 import jakarta.ws.rs.BadRequestException;
+import java.util.List;
 import java.util.Map;
 import org.teamproject.lottocaptainteam.controller.ModelView;
 import org.teamproject.lottocaptainteam.controller.member.MemberController;
@@ -11,7 +12,6 @@ import org.teamproject.lottocaptainteam.repository.MemberRepository;
 public class MemberSignupController implements MemberController {
 
     private final MemberRepository memberRepository;
-
     public MemberSignupController(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
@@ -25,10 +25,10 @@ public class MemberSignupController implements MemberController {
         String email = paramMap.get("email");
 
         MemberSignupDTO inputInfo = MemberSignupDTO.create(id, username, password, passwordConfirm, email);
-
         validateBeforeSignup(inputInfo);
+
         Member member = Member.of(id, username, password, email);
-        memberRepository.signup(member);
+        member = memberRepository.signup(member);
 
         ModelView mv = new ModelView("member/signup/save");
         mv.getModel().put("member", member);

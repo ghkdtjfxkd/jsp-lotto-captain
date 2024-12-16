@@ -1,0 +1,51 @@
+.login_wrapper {
+    background-color: gray;
+    width: 300px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.login_core {
+    width: 300px;
+    height: 80px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.login_core_input {
+    background-color: azure;
+    width: 200px;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.login_core_input_id {
+    width: 180px;
+    height: 30px;
+}
+.login_core_input_pw {
+    width: 180px;
+    height: 30px;
+}
+
+.login_core_button {
+    background-color: aqua;
+    width: 70px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login_sub {
+    width: 200px;
+    height: 14px;
+    display: flex;
+    justify-content: space-around;
+}

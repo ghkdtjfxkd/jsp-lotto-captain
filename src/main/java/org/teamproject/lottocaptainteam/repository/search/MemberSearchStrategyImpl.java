@@ -48,6 +48,6 @@ public class MemberSearchStrategyImpl implements MemberSearchStrategy {
                 rs.getString("name"),
                 rs.getString("password"),
                 rs.getString("email")
-        );
+        ).withAdminPermission(rs.getBoolean("admin_permission"));
     }
 }

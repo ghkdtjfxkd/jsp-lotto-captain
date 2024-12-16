@@ -1,6 +1,7 @@
 package org.teamproject.lottocaptainteam.controller.member.login;
 
 import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.ws.rs.BadRequestException;
 import java.util.Map;
 import java.util.Optional;
@@ -24,6 +25,7 @@ public class MemberLoginController implements MemberController {
         String id = paramMap.get("id");
         String password = paramMap.get("password");
 
+//        HttpServletRequest request = (HttpServletRequest) paramMap.get("request");
         try {
             login(id, password);
             ModelView mv = new ModelView("member/login/after-login");

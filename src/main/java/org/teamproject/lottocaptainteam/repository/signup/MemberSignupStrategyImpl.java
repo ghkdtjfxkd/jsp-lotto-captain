@@ -16,7 +16,7 @@ public class MemberSignupStrategyImpl implements MemberSignupStrategy {
 
     @Override
     public Member execute(Member member) {
-        String sql = "insert into member(id, name, password, email) values(?, ?, ?, ?)";
+        String sql = "insert into member(id, name, password, email, admin_permission) values(?, ?, ?, ?, ?)";
         Connection con = null;
         PreparedStatement pstmt = null;
 
@@ -24,10 +24,11 @@ public class MemberSignupStrategyImpl implements MemberSignupStrategy {
             con = connectionUtil.getConnection();
             pstmt = con.prepareStatement(sql);
 
-            pstmt.setString(1, member.getId());
+            pstmt.setString(1,member.getId());
             pstmt.setString(2, member.getName());
             pstmt.setString(3, member.getPassword());
             pstmt.setString(4, member.getEmail());
+            pstmt.setBoolean(5, member.getAdmin());
 
             pstmt.executeUpdate();
             return member;

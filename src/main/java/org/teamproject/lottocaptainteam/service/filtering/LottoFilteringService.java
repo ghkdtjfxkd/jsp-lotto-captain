@@ -3,7 +3,10 @@ package org.teamproject.lottocaptainteam.service.filtering;
 import static org.teamproject.lottocaptainteam.service.constant.LottoRegulation.END_INCLUSIVE_NUMBER;
 import static org.teamproject.lottocaptainteam.service.constant.LottoRegulation.START_INCLUSIVE_NUMBER;
 
+import jakarta.servlet.http.HttpServletRequest;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.IntStream;
 import org.teamproject.lottocaptainteam.service.filtering.filters.LottoFilter;
 import org.teamproject.lottocaptainteam.service.filtering.validator.LottoNumberValidator;
@@ -33,7 +36,8 @@ public abstract class LottoFilteringService {
     private List<Integer> passedAllFilters() {
         List<Integer> numbers = lottoNumbers;
         for (LottoFilter filter : getLottoFilters()) {
-            numbers = filter.apply(numbers);
+            Map<String, String> params = new HashMap<>();
+            numbers = filter.apply(numbers, params);
             validate(numbers);
         }
         return numbers;

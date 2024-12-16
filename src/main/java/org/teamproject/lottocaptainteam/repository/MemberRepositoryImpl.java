@@ -1,6 +1,10 @@
 package org.teamproject.lottocaptainteam.repository;
 
-import java.awt.MenuBar;
+import static org.teamproject.lottocaptainteam.connection.ConnectionConst.PASSWORD;
+import static org.teamproject.lottocaptainteam.connection.ConnectionConst.URL;
+import static org.teamproject.lottocaptainteam.connection.ConnectionConst.USERNAME;
+
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -94,29 +98,27 @@ public class MemberRepositoryImpl implements MemberRepository {
         String sql = "SELECT * FROM member";
         List<Member> members = new ArrayList<>();
         try {
-            Connection conn = DriverManager.getConnection(
-                    ConnectionConst.URL,
-                    ConnectionConst.USERNAME,
-                    ConnectionConst.PASSWORD);
+            Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);
             PreparedStatement pstmt = conn.prepareStatement(sql);
             ResultSet rs = pstmt.executeQuery();
 
             while (rs.next()) {
-                members.add(mapToMember(rs));
+                Member member = mapToMember(rs);
+                members.add(member);
             }
         } catch (SQLException e) {
             throw new IllegalStateException("Failed to fetch all members", e);
         }
         return members;
-
     }
 
     private Member mapToMember(ResultSet rs) throws SQLException {
-        return Member.of(
+        Member member =  Member.of(
                 rs.getString("id"),
                 rs.getString("name"),
                 rs.getString("password"),
                 rs.getString("email")
-        );
+        ).withAdminPermission(rs.getBoolean("admin_permission"));
+        return member;
     }
 }

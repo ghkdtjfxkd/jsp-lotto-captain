@@ -1,5 +1,6 @@
 package org.teamproject.lottocaptainteam.repository;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;

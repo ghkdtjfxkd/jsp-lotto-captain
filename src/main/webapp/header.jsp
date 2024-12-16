@@ -8,18 +8,36 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <link rel="stylesheet" href="headline.css">
+    <link rel="stylesheet" href="header.css">
 </head>
 <body>
 <div class="headline">
-    <div class="headline_logo"><a href=""><img src="static/logo.png" alt=""></a></div>
+    <div class="headline_logo">
+        <a href="index.jsp" class="headline_logo_img">
+            <img src="static/logo.png" alt="">
+        </a>
+    </div>
 
     <div class="headline_category">
-        <div class="headline_category_forum"><a href="/testrecommend.jsp">로또번호 추천</a>  </div>
-        <div class="headline_category_forum"><a href="">로또 토론실</a>  </div>
-        <div class="headline_category_forum"><a href="">수익률 랭킹</a>  </div>
-        <div class="headline_category_forum"><a href="">개인 분석실</a>  </div>
-        <div class="headline_category_forum"><a href="">자유 게시판</a>  </div>
+        <div class="headline_category_forum">
+            <a href="recommend-page.jsp">로또번호 추천</a>
+        </div>
+
+        <div class="headline_category_forum">
+            <a href="">로또 토론실</a>
+        </div>
+
+        <div class="headline_category_forum">
+            <a href="">수익률 랭킹</a>
+        </div>
+
+        <div class="headline_category_forum">
+            <a href="">개인 분석실</a>
+        </div>
+
+        <div class="headline_category_forum">
+            <a href="">자유 게시판</a>
+        </div>
     </div>
 </div>
 </body>

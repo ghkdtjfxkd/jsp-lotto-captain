@@ -1,19 +1,16 @@
 package org.teamproject.lottocaptainteam.service.filtering.filters;
 
 import java.util.List;
+import java.util.Map;
 
 public class SpecificRangeFilter implements LottoFilter {
-
-    private final int startInclusive;
-    private final int endExclusive;
-
-    public SpecificRangeFilter(int startInclusive, int endExclusive) {
-        this.startInclusive = startInclusive;
-        this.endExclusive = endExclusive;
-    }
+    private int startInclusive;
+    private int endExclusive;
 
     @Override
-    public List<Integer> apply(List<Integer> numbers) {
+    public List<Integer> apply(List<Integer> numbers, Map<String, String> paramMap) {
+        this.startInclusive = Integer.parseInt(paramMap.get("startInclusive"));
+        this.endExclusive = Integer.parseInt(paramMap.get("endExclusive"));
         return List.copyOf(removeOutRange(numbers));
     }
 
@@ -29,7 +26,7 @@ public class SpecificRangeFilter implements LottoFilter {
     }
 
     private boolean lessThanStartInclusiveNumber(int number) {
-        return number < startInclusive;
+        return number < this.startInclusive;
     }
 
     private List<Integer> removeMoreThanStartInclusive(List<Integer> numbers) {
@@ -39,7 +36,7 @@ public class SpecificRangeFilter implements LottoFilter {
     }
 
     private boolean moreThanStartInclusiveNumber(int number) {
-        return number > endExclusive;
+        return number > this.endExclusive;
     }
 
 }

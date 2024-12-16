@@ -8,10 +8,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <link rel="stylesheet" href="../../login.css">
+    <link rel="stylesheet" href="css/member/login/login.css">
 </head>
 <body>
 <div class="login_wrapper">
+    <div class="login_core">
     <form action="/member/login/login" method="post" class="login_core">
         <div class="login_core_input">
             <input type="text" placeholder="아이디" name="id" class="login_core_input_id" required>
@@ -22,7 +23,7 @@
             <button type="submit">로그인</button>
         </div>
     </form>
-
+</div>
     <div class="login_sub">
         <div class="login_sub_factor"><a href="${pageContext.request.contextPath}/member/signup/signup-form">회원가입</a></div>
         <div class="login_sub_factor"><a href="">id찾기</a></div>
