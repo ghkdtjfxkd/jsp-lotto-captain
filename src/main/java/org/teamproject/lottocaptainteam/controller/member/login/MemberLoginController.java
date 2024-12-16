@@ -1,7 +1,6 @@
 package org.teamproject.lottocaptainteam.controller.member.login;
 
 import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServletRequest;
 import jakarta.ws.rs.BadRequestException;
 import java.util.Map;
 import java.util.Optional;

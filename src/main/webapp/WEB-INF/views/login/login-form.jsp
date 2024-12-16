@@ -1,0 +1,39 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: syt11
+  Date: 2024. 12. 16.
+  Time: 오후 12:44
+  To change this template use File | Settings | File Templates.
+--%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <link rel="stylesheet" href="css/member/login/login.css">
+</head>
+<body>
+<div class="login_wrapper">
+    <div class="login_core">
+        <form action="/login/login" method="post" class="login_core">
+            <div class="login_core_input">
+                <input type="text" placeholder="아이디" name="id" class="login_core_input_id" required>
+                <input type="password" placeholder="비밀번호" name="password" class="login_core_input_pw" required>
+            </div>
+
+            <div class="login_core_button">
+                <button type="submit" class="login_core_button">
+                    <p class="login_button_text">
+                        로그인
+                    </p>
+                </button>
+            </div>
+        </form>
+    </div>
+    <div class="login_sub">
+        <div class="login_sub_factor"><a href="${pageContext.request.contextPath}/member/signup/signup-form">회원가입</a></div>
+        <div class="login_sub_factor"><a href="">id찾기</a></div>
+        <div class="login_sub_factor"><a href="">pw찾기</a></div>
+    </div>
+</div>
+</body>
+</html>
+

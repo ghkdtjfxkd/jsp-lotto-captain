@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <link rel="stylesheet" href="css/member/login/login.css">
+    <link rel="stylesheet" href="../../../../css/member/login/login.css">
 </head>
 <body>
 <div class="login_wrapper">
@@ -20,7 +20,11 @@
         </div>
 
         <div class="login_core_button">
-            <button type="submit">로그인</button>
+            <button type="submit" class="login_core_button">
+                <p class="login_button_text">
+                    로그인
+                </p>
+            </button>
         </div>
     </form>
 </div>

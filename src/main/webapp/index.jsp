@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>::로또대장::압도적인 대한민국 NO.1 당첨률</title>
@@ -27,6 +28,18 @@
 
         <div class="main_wrapper_contents">
             <div class="main_upperPart">
+<%--                <div>--%>
+<%--                    <c:choose>--%>
+
+<%--                        <c:when test="${not empty sessionScope.loggedMember}">--%>
+<%--                            <%@ include file="WEB-INF/views/login/after-login.jsp" %>--%>
+<%--                        </c:when>--%>
+
+<%--                        <c:otherwise>--%>
+<%--                            <%@ include file="WEB-INF/views/login/login-form.jsp" %>--%>
+<%--                        </c:otherwise>--%>
+<%--                    </c:choose>--%>
+<%--                </div>--%>
                 <div>
                     <%@ include file="WEB-INF/views/member/login/login-status.jsp" %>
                 </div>

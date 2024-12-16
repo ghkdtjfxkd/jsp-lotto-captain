@@ -43,6 +43,10 @@
     justify-content: center;
 }
 
+.login_button_text {
+    font-size: 13pt;
+}
+
 .login_sub {
     width: 200px;
     height: 14px;
