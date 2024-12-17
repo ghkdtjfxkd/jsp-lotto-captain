@@ -20,7 +20,7 @@
 
     <div class="headline_category">
         <div class="headline_category_forum">
-            <a href="recommend-page.jsp">로또번호 추천</a>
+            <a href="/recommend-page.jsp">로또번호 추천</a>
         </div>
 
         <div class="headline_category_forum">

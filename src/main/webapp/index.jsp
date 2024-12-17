@@ -28,21 +28,20 @@
 
         <div class="main_wrapper_contents">
             <div class="main_upperPart">
-<%--                <div>--%>
-<%--                    <c:choose>--%>
-
-<%--                        <c:when test="${not empty sessionScope.loggedMember}">--%>
-<%--                            <%@ include file="WEB-INF/views/login/after-login.jsp" %>--%>
-<%--                        </c:when>--%>
-
-<%--                        <c:otherwise>--%>
-<%--                            <%@ include file="WEB-INF/views/login/login-form.jsp" %>--%>
-<%--                        </c:otherwise>--%>
-<%--                    </c:choose>--%>
-<%--                </div>--%>
                 <div>
-                    <%@ include file="WEB-INF/views/member/login/login-status.jsp" %>
+                    <c:choose>
+                        <c:when test="${not empty sessionScope.loggedMember}">
+                            <%@ include file="WEB-INF/views/login/after-login-test.jsp" %>
+                        </c:when>
+
+                        <c:otherwise>
+                            <%@ include file="WEB-INF/views/login/login-form.jsp" %>
+                        </c:otherwise>
+                    </c:choose>
                 </div>
+<%--                <div>--%>
+<%--                    <%@ include file="WEB-INF/views/member/login/login-status.jsp" %>--%>
+<%--                </div>--%>
                 <div>
                     <%@ include file="local-ad.jsp" %>
                 </div>

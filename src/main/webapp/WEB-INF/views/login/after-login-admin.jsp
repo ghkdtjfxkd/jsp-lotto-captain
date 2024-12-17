@@ -20,7 +20,7 @@
 
             <div class="login_core_after_profile_main">
                 <div class="login_core_after_profile_level">
-                    ♝로또이병♝
+                    ♛관리자♛
                 </div>
 
                 <div class="login_core_after_profile_name">

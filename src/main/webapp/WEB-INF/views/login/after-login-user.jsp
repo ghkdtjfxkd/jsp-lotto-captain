@@ -13,7 +13,9 @@
 <body>
 <div class="login_wrapper">
     <div class="login_core">
+
         <form action="login/logout" method="post" class="login_core">
+
             <div class="login_core_after_profile_image">
                 <img src="/static/logo.png" class="login_core_after_profile_image" alt="프로필 이미지">
             </div>
@@ -33,16 +35,16 @@
             <button type="submit" class="logout_button">
                 <p class="logout_button_text">로그아웃</p>
             </button>
-
         </form>
     </div>
+    
     <div class="login_sub">
         <div class="login_sub_factor">
-            <a href="../member/mypage/mypage-form" class="login_sub_factor" >마이페이지</a>
+            <a href="../member/mypage/mypage-form" class="login_sub_factor">마이페이지</a>
         </div>
 
         <div class="login_sub_factor">
-            <a href="../member/admin/members" class="login_sub_factor">회원관리</a>
+            <a href="../member/admin/members" class="login_sub_factor">내 정보</a>
         </div>
     </div>
 </div>

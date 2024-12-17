@@ -18,7 +18,7 @@ body {
     align-items: center;
 }
 .main {
-    width: 1800px;
+    width: 1700px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;

@@ -15,12 +15,18 @@ import org.teamproject.lottocaptainteam.controller.filter.constant.LottoRules;
 
 public class DrawController {
 
-
     private static final Random defaultRandom = ThreadLocalRandom.current();
 
     public static List<Integer> draw() {
         return pickUniqueNumbersInRange(LottoRules.START_INCLUSIVE.get(), LottoRules.END_INCLUSIVE.get(),
                 LottoRules.TOTAL_NUMBER_COUNT.get());
+    }
+
+    // draw 메서드 수정: 필터링된 리스트에서 번호를 뽑도록 변경
+    public static List<Integer> draw(List<Integer> availableNumbers) {
+        validateNumbers(availableNumbers); // 리스트 검증
+        validateCount(0, availableNumbers.size() - 1, LottoRules.TOTAL_NUMBER_COUNT.get()); // 숫자 개수 검증
+        return pickUniqueNumbersFromList(availableNumbers, LottoRules.TOTAL_NUMBER_COUNT.get());
     }
 
     public static int pickNumberInList(List<Integer> numbers) {
@@ -44,6 +50,12 @@ public class DrawController {
         return shuffle(numbers).subList(0, count);
     }
 
+    // 필터링된 리스트에서 고유 번호를 뽑는 새로운 메서드 추가
+    private static List<Integer> pickUniqueNumbersFromList(List<Integer> numbers, int count) {
+        validateNumbers(numbers); // 리스트 검증
+        return shuffle(numbers).subList(0, count); // 섞은 뒤 원하는 개수만큼 반환
+    }
+
     private static <T> List<T> shuffle(List<T> list) {
         List<T> result = new ArrayList<>(list);
         Collections.shuffle(result);
@@ -56,7 +68,6 @@ public class DrawController {
             throw new IllegalArgumentException("numbers cannot be empty.");
         }
     }
-
 
     private static void validateRange(int startInclusive, int endInclusive) throws IllegalArgumentException {
         if (startInclusive > endInclusive) {

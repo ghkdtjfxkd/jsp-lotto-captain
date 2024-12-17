@@ -286,6 +286,22 @@
 
             // 숨겨진 input 필드에 visibleCards 배열을 문자열로 변환해 저장
             document.getElementById('visibleCards').value = JSON.stringify(visibleCards);
+
+            const filterStates = {
+                even: document.getElementById('even').checked,
+                odd: document.getElementById('odd').checked,
+                range: {
+                    start: document.getElementById('rangeStart').value || null,
+                    end: document.getElementById('rangeEnd').value || null
+                },
+                filter4: document.getElementById('filter4').checked,
+                filter5: document.getElementById('filter5').checked,
+                filter6: document.getElementById('filter6').checked
+            };
+
+            // 숨겨진 input 필드에 filterStates 객체를 JSON 문자열로 저장
+            document.getElementById('filterStates').value = JSON.stringify(filterStates)
+
         }
 
     </script>
@@ -322,8 +338,9 @@
     <% } %>
 </div>
 
-<form action="processLotto.jsp" method="post" onsubmit="prepareSubmit()">
+<form action="/recommend/number-pool" method="post" onsubmit="prepareSubmit()">
     <input type="hidden" id="visibleCards" name="visibleCards" />
+    <input type="hidden" id="filterStates" name="filterStates" />
     <button class="submit-btn" type="submit">Submit</button>
 </form>
 </body>

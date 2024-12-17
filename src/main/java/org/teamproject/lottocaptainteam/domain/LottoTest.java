@@ -60,7 +60,9 @@ public class LottoTest {
     }
 
     public List<Integer> getNumbers() {
-        return numbers;
+        return numbers.stream()
+                .sorted()
+                .toList();
     }
 
     public String getNumbersParsedAtJSON() {

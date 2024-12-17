@@ -1,0 +1,129 @@
+.login_wrapper {
+    border: none;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    width: 300px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.login_core {
+    width: 300px;
+    height: 80px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.login_core_after {
+    background-color: azure;
+    width: 200px;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.login_core_after_profile_image {
+    border-radius: 10px;
+    height: inherit;
+}
+
+.login_core_after_profile_main {
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.login_core_after_profile_level {
+    border-radius: 5px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: yellow;
+    width: 100px;
+    height: 30px;
+}
+
+.login_core_after_profile_name {
+    border-radius: 5px;
+    font-weight: bold;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: deepskyblue;
+
+    width: 100px;
+    height: 30px;
+}
+
+
+.logout_button {
+    border:none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #f9f9f9;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logout_button:hover {
+    background-color: #f9f9f9;
+    color: #007bff;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logout_button_text {
+    font-size: 12pt;
+}
+
+.login_sub {
+    width: 270px;
+    height: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.login_sub_factor {
+    border-radius: 5px;
+    width: 120px;
+    height: 25px;
+    background-color: #007bff;
+    color: #f9f9f9;
+    text-decoration: none;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.login_sub_factor:hover {
+    border-radius: 5px;
+    width: 120px;
+    height: 25px;
+    background-color: #f9f9f9;
+    color: #007bff;
+    text-decoration: none;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}

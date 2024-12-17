@@ -61,7 +61,7 @@ public class MemberRepositoryImpl implements MemberRepository {
                 }
             }
         } else {
-            throw new IllegalStateException("Repository is already initialized");
+
         }
     }
 
